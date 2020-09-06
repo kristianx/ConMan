@@ -1,0 +1,39 @@
+﻿@model ConManApp.Models.RaspolozivaOpremaVM
+@{
+    ViewData["Title"] = "PregledRaspoloziveOpreme";
+}
+<a class="fa fa-arrow-left" aria-hidden="true" href="/Radnik/Index"></a><br /><br />
+<form action="/Radnik/PregledRaspoloziveOpreme?Filter=@Model.Filter">
+    <label>Pretraga</label><br />
+    <input type="text" asp-for="Filter" placeholder="Unesite naziv opreme" /><br />
+    <input class="btn btn-primary" type="submit" value="Filtriraj" />
+</form>
+
+
+<table class="table table-striped">
+
+    <tr>
+
+        <th>Naziv opreme</th>
+        <th>Naziv skladista</th>
+        <th>Adresa</th>
+        
+        <th>Akcija</th>
+    </tr>
+    @foreach (var x in Model.rows)
+    {
+        <tr>
+
+            <td>@x.Naziv</td>
+            <td>@x.NazivSkladista</td>
+            <td>@x.AdresaSkladista</td>
+            
+            <td><a href="/Radnik/IznajmiOpremu?opremaid=@x.OpremaID">Iznajmi</a></td>
+        </tr>
+
+    }
+
+</table>
+
+
+

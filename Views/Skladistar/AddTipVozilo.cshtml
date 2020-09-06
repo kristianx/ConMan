@@ -1,0 +1,13 @@
+﻿@model ConManApp.EnModels.TipVozila
+@{
+    ViewData["Title"] = "AddTipVozilo";
+}
+
+<h2>Unesite tip vozila:</h2>
+@using (Html.BeginForm("AddTipVozilo", "Skladistar", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.NazivTipa, new { @placeholder = "Unesite naziv tipa vozila" })
+    <input type="submit" value="Sacuvaj" />
+}
+<a href="/Skladistar/AddVozilo">Back to Previous</a>
+

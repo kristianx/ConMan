@@ -1,0 +1,26 @@
+﻿@model ConManApp.EnModels.RadnikOprema
+@{
+    ViewData["Title"] = "KreirajRadnikOprema";
+}
+<a class="fa fa-arrow-left" aria-hidden="true" href="/Radnik/Index"></a><br />
+@using (Html.BeginForm("IznajmiOpremu", "Radnik", new { radniko = @Model }))
+{
+    @*@Html.DropDownListFor(m => m.OpremaId, ViewBag.OpremaBag as SelectList, "Odaberi")<br />
+        @Html.TextBoxFor(m => m.svrhaIznajmljivanja, new {@placeholder="Unesite svrhu iznajmljivanja" })<br />
+        <label>Od</label><br />
+        <input type="date" asp-for="DatumZaduzivanja" /><br />
+        <label>Do</label><br />
+        <input type="date" asp-for="DatumKrajaZaduzivanja" /><br />*@
+    <input asp-for="OpremaId" hidden />
+    <label>Svrha:</label><br />
+    <input type="text" asp-for="svrhaIznajmljivanja" /><br />
+    <label>Od</label><br />
+    <input type="date" asp-for="DatumZaduzivanja" /><br />
+    <label>Do</label><br />
+    <input type="date" asp-for="DatumKrajaZaduzivanja" /><br />
+
+    <input class="btn btn-primary btn-info" type="submit" value="Zaduzi">
+}
+
+
+

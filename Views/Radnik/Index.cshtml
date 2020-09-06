@@ -1,0 +1,82 @@
+﻿@model ConManApp.Models.RadnikIndexVM
+@{
+    ViewData["Title"] = "Index";
+}
+http://localhost:51509/Radnik/ViewMyProfile
+<style>
+</style>
+<body>
+
+    <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+        </button>
+
+
+        <a style="margin-right:0px;width:auto;margin-left:90%" href="/Poslovodja/Logout" class="btn btn-danger">Log out, @Model.Username</a>
+
+    </nav>
+
+
+
+    <a style="margin-right:0px;width:auto;margin-left:90%" href="/Radnik/ViewMyProfile" class="btn btn-primary btn-group">Moj profil</a>
+    <label>Aktivna zaduzenja opreme:</label>
+    <table class="table table-bordered">
+        <tr>
+            <th>Naziv opreme</th>
+            <th>Svrha iznajmljivanja</th>
+            <th>Naziv skladista </th>
+            <th>Od</th>
+            <th>Do </th>
+            <th>Akcija</th>
+        </tr>
+        @foreach (var x in Model.OpremaIznajmljena)
+        {
+            <tr>
+                <td>@x.OpremaNaziv</td>
+                <th>@x.SvrhaIznajmljivanja</th>
+                <th>@x.NazivSkladista</th>
+                <th>@x.DatumIznajmljivanja</th>
+                <th>@x.DatumKrajaIznajmljivanja </th>
+                <th><a href="/Radnik/VratiOpremu?radnikopremaid=@x.RadnikOpremaID">Vrati</a></th>
+            </tr>
+
+        }
+    </table>
+    <a class="btn btn-primary btn-block" href="/Radnik/PregledRaspoloziveOpreme">Pregled raspolozive opreme</a>
+    <br />
+    <label>Aktivna zaduzenja vozila:</label>
+    <table class="table table-bordered">
+        <tr>
+            <th>Naziv vozila</th>
+            <th>Godina proizvodnje</th>
+            <th>Svrha iznajmljivanja</th>
+            <th>Naziv skladista </th>
+            <th>Od</th>
+            <th>Do </th>
+            <th>Akcija</th>
+        </tr>
+        @foreach (var x in Model.VozilaIznajmljena)
+        {
+            <tr>
+                <td>@x.NazivVozila</td>
+                <td>@x.GodinaProizvodnje</td>
+                <th>@x.SvrhaIznajmljivanja</th>
+                <th>@x.NazivSkladista</th>
+                <th>@x.DatumIznajmljivanja</th>
+                <th>@x.DatumKrajaIznajmljivanja </th>
+                <th><a href="/Radnik/VratiVozilo?narudzbaid=@x.RadnikVoziloID">Vrati</a></th>
+            </tr>
+        }
+
+    </table>
+    <a class="btn btn-primary btn-block" href="/Radnik/PregledRaspolozivihVozila">Pregled raspolozivih vozila</a>
+    <br />
+    <br />
+    <br />
+
+
+
+
+</body>

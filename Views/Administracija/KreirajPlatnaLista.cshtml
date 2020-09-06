@@ -1,0 +1,37 @@
+﻿@model ConManApp.EnModels.PlatnaLista
+@{
+    ViewData["Title"] = "KreirajPlatnaLista";
+}
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<h2>Kreiraj platnu listu:</h2>
+<script type="text/javascript" >
+    $(function () {
+
+
+        $(".formdatepicker").datepicker();
+    }
+        );
+</script>
+@*<form>
+
+        <input type="text" title="Mjesec:" placeholder="Unesite mjesec:" /><br />
+        <input type="text" title="Godina:" placeholder="Unesite godinu:" /><br />
+        <p>Datum kreiranja<p>
+        <input type="date" /><br />
+        <p>ID uposlenika:</p>
+        <input type="text" /><br />
+
+
+        <input type="button" onclick="/Administracija/KreirajPlatnaLista" value="Sacuvaj" />
+    </form>*@
+@using (Html.BeginForm("KreirajPlatnaLista", "Administracija", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.mjesec, new { @placeholder = "Unesite mjesec" })<br />
+    @Html.TextBoxFor(m => m.godina, new { @placeholder = "Unesite godinu" })<br />
+   @*@Html.EditorFor(m => m.DatumKreiranja, new { @placeholder = "Datum kreiranja" })<br />*@
+
+@Html.DropDownListFor(m=>m.UposlenikId,ViewBag.AdmiBag as SelectList, "Uposlenik" )<br />
+
+<input type = "submit" value="Sacuvaj" />
+
+}

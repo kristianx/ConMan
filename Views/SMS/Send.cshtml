@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Send";
+}
+<a href="/Poslovodja/Index1" class="btn btn-danger">Nazad</a>
+@using (Html.BeginForm("Send", "SMS", FormMethod.Post))
+{
+    <form class="form-group">
+        <div class="form-control">
+            <strong>Pošali poruku:</strong>
+        </div>
+        <div class="form-control">
+            <input id="to" name="to" type="text" placeholder="To" />
+        </div>
+        <div class="form-control">
+            <input id="text" name="text" type="text" placeholder="Text" />
+        </div>
+        <div class="form-control">
+            <input type="submit" value="Send" />
+        </div>
+    </form>
+
+}

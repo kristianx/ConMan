@@ -1,0 +1,65 @@
+﻿
+@model ConManApp.Models.RadnikViewModel
+@{
+    ViewData["Title"] = "ViewMyProfile";
+
+}
+<a class="fa fa-arrow-left" aria-hidden="true" href="/Radnik/Index"></a><br />
+
+<body>
+    <table class="table table-bordered">
+
+        <tr>
+            <th>
+                Ime:
+            </th>
+            <td>
+                @Model.Ime
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Prezime:
+            </th>
+            <td>
+                @Model.Prezime
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Korisnicko ime:
+            </th>
+            <td>
+                @Model.username
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Password:
+            </th>
+            <td>
+                @Model.password
+            </td>
+        </tr>
+        <tr>
+            <th>
+                Kontakt broj:
+            </th>
+            <td>
+                @Model.KontaktBroj
+            </td>
+        </tr>
+
+    </table><br />
+
+</body>
+
+
+
+
+
+
+
+
+
+

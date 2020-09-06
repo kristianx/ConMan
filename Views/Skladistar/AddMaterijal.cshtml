@@ -1,0 +1,20 @@
+﻿@model ConManApp.EnModels.Materijal
+@{
+    ViewData["Title"] = "AddMaterijal";
+}
+
+<h2>AddMaterijal</h2>
+@using (Html.BeginForm("AddMaterijal", "Skladistar",new { username = ViewBag.username, m = @Model }))
+{
+    @Html.DropDownListFor(m => m.GrupaMaterijalId, ViewBag.GrupeBag as SelectList, "--grupa--")<a href="/Skladistar/AddGrupaMaterijala">...</a><br />
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Naziv materijala:" })<br />
+    @Html.TextBoxFor(m => m.Cijena, new { @placeholder = "Cijena:" })<br />
+    @*@Html.DropDownListFor(m => m.SkladisteId, ViewBag.SkladisteBag as SelectList, "--skladiste--")<br />*@
+    @Html.DropDownListFor(m => m.DobavljacId, ViewBag.DobavljaciBag as SelectList, "--dobavljac--")<br />
+    @Html.TextBoxFor(m => m.Kolicina, new { @placeholder="kolicina"})<br />
+    <input type="submit" value="Sacuvaj" /><br />
+
+    <a href="/Skladistar/Index?username=@ViewBag.username">Back to menu</a>
+
+}
+

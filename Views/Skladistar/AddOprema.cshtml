@@ -1,0 +1,16 @@
+﻿@model ConManApp.EnModels.Oprema
+@{
+    ViewData["Title"] = "AddOprema";
+}
+
+<h2>AddOprema</h2>
+
+@using (Html.BeginForm("AddOprema", "Skladistar", new { username = ViewBag.username, o =@Model }))
+{
+    <p>Unesite naziv opreme:</p>
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder="Proizvodjac nazivopreme model:"})<br />
+    <p>Upotrebljivo:</p>
+    @Html.CheckBoxFor(m=>m.usable)<br />
+    <input type="submit" class="btn btn-primary btn-success" value="Sacuvaj" />
+}
+<a href="/Skladistar/Index?username=@ViewBag.username">Back to menu</a>

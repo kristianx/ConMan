@@ -1,0 +1,39 @@
+﻿@model ConManApp.Models.VoziloViewModel
+@{
+    ViewData["Title"] = "ViewVozilo";
+}
+
+<style>
+    .naslovi {
+        background-color: deepskyblue;
+    }
+</style>
+@if (Model != null)
+{
+<div>
+    <p class="naslovi">Vozilo ID:</p>
+    <p>@Model.voziloID</p><br />
+    <p class="naslovi">Naziv proizvodjaca:</p>
+    <p>@Model.ProizvodjacNaziv</p><br />
+    <p class="naslovi">Model:</p>
+    <p>@Model.ModdelNaziv</p><br />
+    <p class="naslovi">Tip vozila:</p>
+    <p>@Model.tipvozila</p><br />
+    <p class="naslovi">Naziv skladista:</p>
+    <p>@Model.nazivskladista</p><br />
+    <p class="naslovi">Adresa:</p>
+    <p>@Model.adresaskladista</p><br />
+    <p class="naslovi">Grad:</p>
+    <p>@Model.NazivGrada</p><br />
+
+
+
+
+</div>
+}
+else
+{
+    <p>Trazeno vozilo ne postoji.</p>
+}
+
+

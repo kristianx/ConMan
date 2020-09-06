@@ -1,0 +1,16 @@
+﻿@model ConManApp.EnModels.Grad
+@{
+    ViewData["Title"] = "AddGrad";
+}
+
+<h2>Dodajte grad u kome se nalazi vas HQ:</h2>
+@using (Html.BeginForm("AddGrad","Vlasnik", FormMethod.Post))
+{
+    
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder="Unesite naziv grada:"})<br />
+    @Html.DropDownListFor(m=>m.DrzavaId,ViewBag.D as SelectList,"Drzava")<br />
+    <input type="submit" value="Sacuvaj" />
+
+    <a href="/Vlasnik/AddUred">Dalje</a>
+}
+

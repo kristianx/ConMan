@@ -1,0 +1,43 @@
+﻿@model ConManApp.EnModels.RadnikProjekt
+@{
+    ViewData["Title"] = "AddRadnikProjekt";
+}
+<style>
+    #container
+    {
+        width:100%;
+        height:100%;
+        
+        background-color:cornflowerblue;
+    }
+</style>
+
+<div id="container">
+
+
+    @*@using (Html.BeginForm("AddRadnikProjekt", "Poslovodja", new { rp=@Model }))
+    {
+        
+        @Html.DropDownListFor(m => m.ProjektId, ViewBag.ProjektiBag as SelectList, "Projekt")<br />
+        @Html.DropDownListFor(m => m.UposlenikId, ViewBag.RadniciBag as SelectList, "Radnik")<br />
+        <input asp-for="ProjektId" hidden />
+        <input asp-for="UposlenikId" hidden />
+        @Html.TextBoxFor(m => m.pozicijauProjektu, new { placeholder = "Unesite poziciju u projektu" })<br />
+        @Html.ValidationMessageFor(m => m.pozicijauProjektu)<br />
+
+        <input class="btn btn-success" type="submit" value="Sacuvaj" />
+    }*@
+
+   <form asp-controller="Poslovodja" asp-action="AddRadnikProjekt">
+       <input asp-for="ProjektId" hidden />
+       <input asp-for="UposlenikId" hidden />
+       <input asp-for="pozicijauProjektu" hidden />
+       <label>Pozicija u projektu:</label><br />
+       <input type="text" asp-for="pozicijauProjektu" />
+       <input class="btn btn-success" type="submit" value="Sacuvaj" />
+   </form>
+
+</div>
+
+
+

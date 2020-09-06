@@ -1,0 +1,36 @@
+﻿@model ConManApp.Models.RaspolozivaVozilaVM
+@{
+    ViewData["Title"] = "PregledRaspolozivihVozila";
+    
+}
+
+<a href="/Radnik/Index" class="fa fa-arrow-left" aria-hidden="true"></a>
+<table class="table table-striped">
+
+    <tr>
+        
+        <th>Proizvodjac</th>
+        <th>Model</th>
+        <th>Godina</th>
+        <th>Tip vozila</th>
+        <th>Skladiste naziv</th>
+        <th>Skladiste adresa</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach(var x in Model.rows)
+    {
+    <tr>
+
+        <td>@x.Proizvodjac</td>
+        <td>@x.Model</td>
+        <td>@x.GodinaProizvodnje</td>
+        <td>@x.TipVozila</td>
+        <td>@x.NazivSkladista</td>
+        <td>@x.AdresaSkladista</td>
+        <td><a href="/Radnik/IznajmiVozilo?voziloid=@x.VoziloID">Iznajmi</a></td>
+    </tr>
+
+    }
+
+</table>
+

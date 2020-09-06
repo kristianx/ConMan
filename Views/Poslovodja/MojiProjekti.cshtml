@@ -1,0 +1,43 @@
+﻿@model ConManApp.Models.PoslovodjaVM
+
+
+
+
+@{
+    ViewData["Title"] = "MojiProjekti";
+}
+
+
+    <table class="table table-bordered">
+        <tr>
+            <th>
+                Naziv projekta
+            </th>
+            <th>Adresa</th>
+            <th>Akcija</th>
+        </tr>
+        @foreach (var x in @Model.projekti)
+        {
+            <tr>
+                <td>
+                    @x.Naziv
+                </td>
+                <td>
+                    @x.Adresa
+                </td>
+                <td>
+                    <a href="/Poslovodja/DetaljiProjekta?id=@x.ProjektId">Detalji</a>
+                </td>
+
+            </tr>
+
+        }
+    </table>
+<br />
+<a href="/Poslovodja/AddRadnikProjekt" class="btn btn-primary" target="_blank">Dodaj radnika na projekt</a><br />
+
+
+<a href="/Poslovodja/Index1"> Back to Index</a>
+
+
+

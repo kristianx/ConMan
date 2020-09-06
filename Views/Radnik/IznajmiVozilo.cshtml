@@ -1,0 +1,21 @@
+﻿@model ConManApp.EnModels.RadnikVozilo
+@{
+    ViewData["Title"] = "IznajmiVozilo";
+}
+
+<h2>IznajmiVozilo</h2>
+@using (Html.BeginForm("IznajmiVozilo","Radnik",new {rv=@Model}))
+{
+    <input asp-for="VoziloId" hidden />
+    <label>Svrha:</label><br />
+    <input type="text" asp-for="SvrhaIznajmljivanja" /><br />
+    <label>Od</label><br />
+    <input type="date" asp-for="DatumZaduzivanja" /><br />
+    <label>Do</label><br />
+    <input type="date" asp-for="DatumKrajaZaduzivanja" /><br />
+    
+    <input type="submit" class="btn btn-primary" value="Sacuvaj" />
+}
+
+<a href="/Radnik/Index">Back to index</a>
+

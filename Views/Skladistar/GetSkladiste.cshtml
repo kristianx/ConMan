@@ -1,0 +1,15 @@
+﻿@model ConManApp.EnModels.Skladiste
+@{
+    ViewData["Title"] = "GetSkladiste";
+}
+
+<h2>GetSkladiste</h2>
+@using (Html.BeginForm("StanjeNaSkladistu", "Skladistar", FormMethod.Get))
+{
+@*@Html.TextBoxFor(m => m.SkladisteId, new { @placeholder = "Uneiste id skladista:" })*@
+    @Html.DropDownListFor(m=>m.SkladisteId,ViewBag.Skladista as SelectList,"Odaberi")
+    <input type="submit" value="Trazi" />
+}
+    <a href="/Skladistar/Index">Back to menu</a>
+
+

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<ConManApp.EnModels.TipVozila>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2
+<h2>Tipovi vozila:</h2>
+@if(Model!=null)
+{
+    <table>
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.NazivTipa</td>
+            </tr>
+
+        }
+    </table>
+}
+

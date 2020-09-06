@@ -1,0 +1,40 @@
+﻿@model ConManApp.EnModels.Poslovodja
+@{
+    ViewData["Title"] = "ViewPoslovodja";
+}
+<style>
+    .ispisposlovodja {
+        background-color: ghostwhite;
+    }
+
+    .naslovi {
+        background-color: red;
+    }
+
+    #podaci {
+        background-color: whitesmoke;
+    }
+</style>
+<h2>ViewPoslovodja</h2>
+@if (Model != null)
+{
+<div class="ispisposlovodja">
+    <p class="naslovi">Ime:</p>
+    <p id="podaci">@Model.Ime</p><br />
+    <p class="naslovi">Prezime:</p>
+    <p id="podaci">@Model.Prezime</p><br />
+    <p class="naslovi">Username:</p>
+    <p id="podaci">@Model.username</p><br />
+    <p class="naslovi">Password:</p>
+    <p id="podaci">@Model.password</p><br />
+    <p class="naslovi">Kontakt broj:</p>
+    <p id="podaci">@Model.KontaktBroj</p><br />
+    <p class="naslovi">Info:</p>
+    <p id="podaci">@Model.OpisIskustva</p>
+</div>
+}
+else
+{
+<p>"Trazeni poslovodja ne postoji."</p>
+}
+

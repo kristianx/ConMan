@@ -1,0 +1,100 @@
+﻿@model ConManApp.Models.ProjektViewModel
+@{
+    ViewData["Title"] = "DetaljiProjekta";
+    Layout = "_Layout";
+}
+<a href="/Poslovodja/Index1" class="fa fa-arrow-left" aria-hidden="true"></a><br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Naziv projekta</th>
+        <th>Grad</th>
+        <th>Adresa</th>
+
+    </tr>
+    <tr>
+        <td>@Model.Naziv</td>
+        <td>@Model.GradNaziv</td>
+        <td>@Model.Adresa</td>
+
+    </tr>
+</table><br />
+
+<label>Radnici na projektu:</label><br />
+                                   
+<table class="table table-striped">
+    <tr>
+        <th>Ime i prezime </th>
+        <th>Username</th>
+        <th>Datum dodavanja na projekt</th>
+        
+        <th>Akcija</th>
+    </tr>
+    @foreach(var x in Model.Radnici)
+    {
+    <tr>
+        <td>@x.ImePrezime </td>
+        <td>@x.Username </td>
+        <th>@x.DatumDodavanja</th>
+       
+        <th><a class="btn btn-info" href="/Poslovodja/PosaljiPoruku">Poruka</a>|<a class="btn btn-danger" href="/Poslovodja/UkloniRadnika?projektid=@Model.ProjektViewModelId&radnikid=@x.ID">Ukloni</a></th>
+    </tr>
+
+    }
+</table><br />
+        
+<a href="/Poslovodja/PregledSlobodnihRadnika?projektid=@Model.ProjektViewModelId" class="btn btn-lg btn-block">Pregled slobodnih radnika</a>
+
+<label>Informacije o događajima na projektu:</label><br />
+<table class="table table-bordered">
+    <tr>
+        <th>Datum kreiranja</th>
+        <th>Text obavijesti</th>
+        
+    </tr>
+    @foreach(var x in Model.InformacijeOProjektu)
+    {
+
+        <tr>
+        <td>@x.InfoDatum </td>
+        <td>@x.InfoText </td>
+        
+    </tr>
+
+    }
+</table>
+<br />
+<a href="/Poslovodja/Index?pid=@Model.ProjektViewModelId">Paging lista</a><br />
+<a class="btn btn-primary" href="/Poslovodja/AddProjektInfo?projektid=@Model.ProjektViewModelId">Dodaj projekt info</a><br />
+<label>Predracuni za projekt:</label><br />
+<table class="table table-bordered">
+    <tr>
+        <th>Naziv predracuna</th>
+        <th>Datum kreiranja</th>
+        <th>Odobren</th>
+        <th>Akcija</th>
+    </tr>
+
+    @foreach(var x in Model.Predracuni)
+    {
+        <tr>
+            <td>@x.NazivPredracuna</td>
+            <td>@x.DatumKreiranja</td>
+            @if (x.JeOdobren == false)
+            {
+                <td>Ne</td>
+            }
+            else
+            {
+                <td>Da</td>
+
+            }
+            <td><a class="btn btn-primary btn-info" href="/Poslovodja/PredracunDetalji?predracunid=@x.PredracunID">Detalji</a>|<a class="btn btn-primary btn-danger" href="/Poslovodja/UkloniPredracun?projektid=@Model.ProjektViewModelId&predracunid=@x.PredracunID">Ukloni</a></td>
+        </tr>
+
+    }
+</table>
+<a href="/Poslovodja/KreirajPredracun?projektid=@Model.ProjektViewModelId" class="btn btn-primary">Kreiraj predracun</a><br /><br />
+
+
+

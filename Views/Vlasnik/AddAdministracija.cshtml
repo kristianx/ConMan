@@ -1,0 +1,23 @@
+﻿@model ConManApp.EnModels.Administracija
+@{
+    ViewData["Title"] = "AddAdministracija";
+}
+
+<h2>AddAdministracija</h2>
+
+@using (Html.BeginForm("AddAdministracija", "Vlasnik", FormMethod.Post))
+{
+
+    @Html.TextBoxFor(m => m.Ime, new { @placeholder = "Ime" })<br />
+    @Html.TextBoxFor(m => m.Prezime, new { @placeholder = "Prezime" })<br />
+    @Html.TextBoxFor(m => m.username, new { @placeholder = "Username" })<br />
+    @Html.TextBoxFor(m => m.password, new { @placeholder = "password" })<br />
+    @Html.TextBoxFor(m => m.KontaktBroj, new { @placeholder = "Broj format xxx/xxx-xxx(x)" })<br />
+    @Html.TextBoxFor(m => m.StrucnoZvanje, new { @placeholder = "StrucnoZvanje" })<br />
+@Html.DropDownListFor(m=>m.UredId, ViewBag.UrediBag as SelectList ,"Odaberi")<br />
+
+    <input type="submit" value="Sacuvaj">
+    <a href="/Vlasnik/Index">Zavrsi setup</a>
+
+
+}

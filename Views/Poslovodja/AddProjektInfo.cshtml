@@ -1,0 +1,17 @@
+﻿@model ConManApp.EnModels.ProjektInfo
+@{
+    ViewData["Title"] = "AddProjektInfo";
+}
+<h2>Unesite informacije o projektu</h2>
+@using (Html.BeginForm("AddProjektInfo", "Poslovodja", new { pi = @Model }))
+    {
+        <input asp-for="ProjektId" hidden />
+        @Html.TextAreaFor(m => m.textInfo, new { @placeholder = "Unesite info ovdje" })<br />
+
+        <input type="submit" value="Sacuvaj" />
+    }
+
+
+
+
+

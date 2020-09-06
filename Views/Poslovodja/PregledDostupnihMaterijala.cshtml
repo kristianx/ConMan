@@ -1,0 +1,37 @@
+﻿@model ConManApp.Models.DostupniMaterijaliVM
+@{
+    ViewData["Title"] = "PregledDostupnihMaterijala";
+}
+<a class="fa fa-arrow-left" aria-hidden="true" href="/Poslovodja/PredracunDetalji?predracunid=@Model.PredracunID"></a><br />
+<form action="/Poslovodja/PregledDostupnihMaterijala?predracunid=@Model.PredracunID&Filter=@Model.Filter">
+    <input asp-for="PredracunID" hidden />
+    <label>Filter</label><br />
+    <input asp-for="Filter" type="text" /><br />
+    <input type="submit" class="btn btn-primary btn-info" value="Filtriraj" /> 
+</form>
+
+<table class="table table-bordered">
+
+    <tr>
+        <th>Naziv materijala</th>
+        <th>Skladiste</th>
+        <th>Tip</th>
+        <th>Mjerna jedinica</th>
+        <th>Kolicina</th>
+        <th>Akcija</th>
+    </tr>
+    @foreach(var x in Model.rows)
+    {
+        <tr>
+            <td>@x.Naziv</td>
+            <td>@x.NazivSkladista</td>
+            <td>@x.NazivGrupe</td>
+            <td>@x.MjernaJedinicaGrupe</td>
+            <td>@x.Kolicina</td>
+            <td><a href="/Poslovodja/AddMaterijalPredracun?predracunid=@Model.PredracunID&materijalid=@x.MaterijalID">Dodaj</a></td>
+        </tr>
+
+    }
+</table>
+
+

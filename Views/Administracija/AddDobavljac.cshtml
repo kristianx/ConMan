@@ -1,0 +1,14 @@
+﻿@model ConManApp.EnModels.Dobavljac
+@{
+    ViewData["Title"] = "AddDobavljac";
+}
+
+<h2>AddDobavljac</h2>
+@using (Html.BeginForm("AddDobavljac","Administracija",FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder="Naziv"})<br />
+    @Html.TextBoxFor(m=>m.GodinaOsnivanja,new { @placeholder="GodinaOsnivanja"})
+
+    <input type="submit" value="Sacuvaj" />
+}
+

@@ -1,0 +1,38 @@
+﻿@model ConManApp.EnModels.Ured
+@{
+    ViewData["Title"] = "AddUred";
+}
+
+<script>
+
+    
+</script>
+<style>
+   
+    #tekst
+    {
+        display:none;
+        color:red;
+    }
+        .plista:hover #tekst {
+            display: inline-block;
+        }
+</style>
+
+<h2>AddUred</h2>
+@using (Html.BeginForm("AddUred", "Administracija", FormMethod.Post))
+{
+    
+<div class="plista">
+    <p>Unesite adresu ureda:</p><br />
+    @Html.TextBoxFor(m => m.Adresa, new { @placeholder = "Adresa ureda" })<br />
+    <p>Grad:</p>
+    @Html.DropDownListFor(m => m.GradId, ViewBag.GradoviBag as SelectList, "Odaberi grad")<a href="/Administracija/AddGrad">...</a><br />
+    <input type="submit" value="Sacuvaj" />
+    <p id="tekst">Defaultna vrijednost je postavljena na prvi element padajuce liste.</p>
+</div>
+
+}
+
+
+

@@ -1,0 +1,70 @@
+﻿@model ConManApp.EnModels.Ured
+@{
+    ViewData["Title"] = "AddUred";
+}
+
+<script>
+
+
+</script>
+<style>
+
+    #tekst {
+        display: none;
+        color: red;
+    }
+
+    .plista:hover #tekst {
+        display: inline-block;
+    }
+</style>
+
+@*<script>
+
+    var DodajUred = function () {
+        var forma = $("#formaured").serialize();
+
+        $.ajax({
+
+
+            type:"POST",
+            url: "/Vlasnik/AddUred",
+            data:forma,
+            error: function (result) { alert("Dogodila se greska!"); },
+            success: function (result) {
+
+                console.log(result);
+                if (result.status == true) {
+                    alert(result.message);
+
+                }
+               else {
+                    alert(result.message);
+
+                }
+
+             },
+
+
+
+
+        });
+    }
+</script>*@
+
+<h2>AddUred</h2>
+@using (Html.BeginForm("AddUred", "Vlasnik", FormMethod.Post))
+{
+
+    
+        <p>Unesite adresu ureda:</p><br />
+        @Html.TextBoxFor(m => m.Adresa, new { @placeholder = "Adresa ureda" })<br />
+        <p>Grad:</p>
+        @Html.DropDownListFor(m => m.GradId, ViewBag.GradoviBag as SelectList, "Odaberi grad")<br />
+        <input type="submit" value="Sacuvaj" />
+        <a href="/Vlasnik/AddAdministracija">Dalje</a>
+}
+
+
+
+

@@ -1,0 +1,14 @@
+﻿@model ConManApp.EnModels.Grad
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h2>Add Grad</h2>
+@using (Html.BeginForm("Add", "Grad", FormMethod.Post))
+{
+    @Html.DropDownListFor(m => m.DrzavaId,ViewBag.D as SelectList, "--select--")
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Unesite naziv grada:" })
+
+    <input type="submit" value="Sacuvaj" />
+}
+

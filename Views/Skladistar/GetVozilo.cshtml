@@ -1,0 +1,16 @@
+﻿@model ConManApp.EnModels.Vozilo
+@{
+    ViewData["Title"] = "GetVozilo";
+}
+
+<h2>GetVozilo</h2>
+<p>Unesite ID vozila:</p>
+@using (Html.BeginForm("ViewVozilo","Skladistar",new {username=ViewBag.username },FormMethod.Get))
+{
+    @*@Html.TextBoxFor(x => x.VoziloId, new { @placeholder="ID vozila:"})*@
+    @Html.DropDownListFor(m=>m.VoziloId,ViewBag.vozila as SelectList,"Vozila")
+    <input type="submit" value="Trazi" />
+}
+<br />
+<a href="/Skladistar/Index">Back to menu</a>
+

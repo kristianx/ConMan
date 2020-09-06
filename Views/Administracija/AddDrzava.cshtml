@@ -1,0 +1,13 @@
+﻿@model ConManApp.EnModels.Drzava
+@{
+    ViewData["Title"] = "AddDrzava";
+}
+
+<h2>AddDrzava</h2>
+<h2>Unesite naziv drzave:</h2>
+@using (Html.BeginForm("AddDrzava", "Administracija", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Unesite naziv drzave" })
+    <input type="submit" value="Sacuvaj" />
+    <a href="/Administracija/AddGrad">Back to previous</a>
+}

@@ -1,0 +1,12 @@
+﻿@model ConManApp.EnModels.Predracun
+@{
+    ViewData["Title"] = "KreirajPredracun";
+}
+
+<form action="/Poslovodja/KreirajPredracun">
+    <input asp-for="ProjektId" hidden />
+    <label>Naziv predracuna:</label><br />
+    <input type="text" asp-for="NazivPredracuna" /><br />
+    <input type="submit" value="Sacuvaj" />
+</form>
+

@@ -1,0 +1,8 @@
+﻿@model ConManApp.EnModels.Drzava
+@{
+    ViewData["Title"] = "DDList";
+}
+
+@Html.DropDownListFor(m=>m.DrzavaId,ViewBag.D as SelectList,"--select--")
+<h2>DDList</h2>
+

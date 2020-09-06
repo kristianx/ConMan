@@ -1,0 +1,34 @@
+﻿@model ConManApp.EnModels.Skladistar
+@{
+    ViewData["Title"] = "AddSkladistar";
+}
+<style>
+
+    #tekst {
+        display: none;
+        color: red;
+    }
+
+    .plista:hover #tekst {
+        display: inline-block;
+    }
+</style>
+<h2>AddSkladistar</h2>
+
+@using (Html.BeginForm("AddSkladistar", "Administracija", FormMethod.Post))
+{
+<div class="plista">
+    @Html.TextBoxFor(m => m.Ime, new { @placeholder = "Ime" })
+    @Html.ValidationMessageFor(m => m.Ime, "Unesite ime", new { @class = "error" })<br />
+    @Html.TextBoxFor(m => m.Prezime, new { @placeholder = "Prezime" })<br />
+    @Html.TextBoxFor(m => m.username, new { @placeholder = "Username" })<br />
+    @Html.TextBoxFor(m => m.password, new { @placeholder = "password" })<br />
+    @Html.TextBoxFor(m => m.KontaktBroj, new { @placeholder = "Broj format xxx/xxx-xxx(x)" })<br />
+
+    @Html.DropDownListFor(m => m.SkladisteId, ViewBag.skladisteBag as SelectList, "Odaberi skladiste")
+    <p id="tekst">Defaultna vrijednost je postavljena na prvi element liste.</p>
+</div>
+    <input type="submit" value="Sacuvaj">
+
+}
+

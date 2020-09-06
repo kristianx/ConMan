@@ -1,0 +1,22 @@
+﻿@model ConManApp.EnModels.Skladiste
+@{
+    ViewData["Title"] = "AddSkladiste";
+}
+
+<h2>AddSkladiste</h2>
+@using (Html.BeginForm("AddSkladiste", "Skladiste", FormMethod.Post))
+{
+
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Unesite naziv skladista:" })
+    @Html.TextBoxFor(m => m.Adresa, new { @placeholder = "Unesite adresu skladista:" })
+    @Html.DropDownListFor(m => m.GradId, ViewBag.GradoviBag as SelectList, "--select--")
+
+    <input type="submit" value="Sacuvaj"  />
+    <input type="reset" value="Reset" />
+    
+    
+
+}
+
+
+

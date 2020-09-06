@@ -1,0 +1,73 @@
+﻿@model ConManApp.Models.SkladisteViewModel
+@{
+    ViewData["Title"] = "ViewSkladiste";
+}
+
+<h2>StanjeNaSkladistu</h2>
+<style>
+    td {
+        width: 150px;
+    }
+</style>
+@if (Model != null)
+{
+    <div>
+        <p>Naziv:</p>
+        <p>@Model.Naziv</p><br />
+        <p>Adresa:</p>
+        <p>@Model.Adresa</p><br />
+        <p>Grad:</p>
+        <p>@Model.GradNaziv</p><br />
+    </div>
+
+    <h2>Vozila:</h2>
+    <table>
+        <tr>
+            <td>
+                Proizvodjac:
+            </td>
+            <td>Model:</td>
+
+
+            <td>Godina:</td>
+        </tr>
+
+        @foreach (var x in Model.Vozila)
+        {
+
+            <tr>
+                <td>@x.NazivProizvodjaca</td>
+                <td>@x.Model</td>
+                <td>@x.GodinaProizvodnje</td>
+            </tr>
+        }
+    </table>
+
+    <h2>Materijali:</h2>
+    <table style="border:2px solid red" cellspacing="40">
+        <tr>
+            <td>
+                Naziv
+            </td>
+            <td>Cijena(u KM)</td>
+
+
+
+        </tr>
+
+        @foreach (var x in Model.Materijali)
+        {
+
+            <tr>
+                <td>@x.Naziv</td>
+                <td>@x.Cijena</td>
+
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>Error.</p>
+}
+

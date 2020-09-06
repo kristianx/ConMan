@@ -1,0 +1,27 @@
+﻿@model ConManApp.EnModels.Radnik
+@{
+    ViewData["Title"] = "AddRadnik";
+}
+
+<h2>AddRadnik</h2>
+<style>
+    .error
+    {
+
+        color:red;
+    }
+</style>
+@using (Html.BeginForm("AddRadnik", "Administracija", FormMethod.Post))
+{
+
+    @Html.TextBoxFor(m => m.Ime, new { @placeholder = "Ime" })
+@Html.ValidationMessageFor(m=>m.Ime,"Unesite ime",new {@class="error" })<br />
+    @Html.TextBoxFor(m => m.Prezime, new { @placeholder = "Prezime" })<br />
+    @Html.TextBoxFor(m => m.username, new { @placeholder = "Username" })<br />
+    @Html.TextBoxFor(m => m.password, new { @placeholder = "password" })<br />
+    @Html.TextBoxFor(m => m.KontaktBroj, new { @placeholder = "Broj format xxx/xxx-xxx(x)" })<br />
+    @Html.TextBoxFor(m => m.info, new { @placeholder = "Dodatne info" })
+
+    <input type="submit" value="Sacuvaj">
+
+}

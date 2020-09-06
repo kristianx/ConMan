@@ -1,0 +1,14 @@
+﻿@model ConManApp.EnModels.RadnikOprema
+@{
+    ViewData["Title"] = "KreirajRadnikOprema";
+}
+
+<h2>KreirajRadnikOprema</h2>
+@using (Html.BeginForm("IznajmiOpremu", "Radnik", new { username = ViewBag.UNAME, radniko = @Model }))
+{
+    @*@Html.DropDownListFor(m => m.OpremaId, ViewBag.OpremaBag as SelectList, "Odaberi")<br />*@
+
+    @Html.EditorFor(m => m.OpremaId);
+    <input class="btn btn-primary btn-info" type="submit" value="Zaduzi">
+}
+    <a href="/Radnik/Index?username=@ViewBag.UNAME">Back to menu</a>

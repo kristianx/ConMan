@@ -1,0 +1,38 @@
+﻿@model ReflectionIT.Mvc.Paging.PagingList<ConManApp.EnModels.ProjektInfo>
+@using ReflectionIT.Mvc.Paging
+@*@addTagHelper *,ReflectionIT.Mvc.Paging*@
+
+
+@{
+    ViewData["Title"] = "PagePInfo";
+}
+
+
+
+<nav>
+    @await this.Component.InvokeAsync("Pager", new {pagingList=this.Model})
+</nav>
+@*<form method="get" class="form-inline" hidden>
+    <input name="pid" class="form-control" placeholder="pid"
+           value="@Model.RouteValue["pid"]" hidden />
+</form>*@
+<table class="table table-hover">
+
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.DatumKreiranja</td>
+            <td>@x.textInfo</td>
+        </tr>
+    }
+</table>
+
+<a href="/Poslovodja/Index1">Back to Index</a>
+
+
+
+<nav>
+    <vc:pager paging-list="@Model" />
+
+    
+</nav>

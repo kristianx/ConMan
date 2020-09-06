@@ -1,0 +1,60 @@
+﻿@model ConManApp.EnModels.Projekt
+@{
+    ViewData["Title"] = "AddProjekt";
+}
+@*<script>
+        var AddProjekt = function () {
+            var forma = $("formaaddprojekt").serialize();
+
+            $.ajax({
+                type: "POST",
+                url: "/Administracija/AddProjekt",
+                data: forma,
+                error: function (result) {
+                    alert("Dogodila se greska");
+                },
+                success: function (result) {
+                    console.log(result);
+                    if (result.status == true) {
+                        alert(result.message);
+
+                    }
+                    if (result.status == false) {
+                        alert(result.message);
+
+                    }
+
+
+                }
+
+            });
+        }
+    </script>*@
+
+<h2>AddProjekt</h2>
+
+@*<form id="formaaddprojekt">
+
+        <input type="text" name="projektid" id="projektid" />
+        <input type="text" name="adresa" id="adresa" />
+        @Html.DropDownListFor(m => m.GradId, ViewBag.GradoviBag as SelectList, "Odaberi grad")<br />
+        @Html.DropDownListFor(m => m.UposlenikId, ViewBag.PoslovodjeBag as SelectList, "Projekt manager")<br />
+        <input type="submit" value="Sacuvaj" onclick="AddProjekt()"/>
+    </form>*@
+
+@using (Html.BeginForm("AddProjekt", "Administracija", FormMethod.Post))
+{
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Unesite naziv projekta" })<br />
+    @Html.TextBoxFor(m => m.Adresa, new { @placeholder = "Unesite adresu projekta" })<br />
+    @Html.DropDownListFor(m => m.GradId, ViewBag.GradoviBag as SelectList, "Odaberi grad")<br />
+    @Html.DropDownListFor(m => m.UposlenikId, ViewBag.PoslovodjeBag as SelectList, "Projekt manager")<br />
+    <label>Pocetak projekta</label><br />
+    <input type="date" asp-for="Pocetak" /><br />
+    <label>Kraj projekta</label>
+    <input type="date" asp-for="Kraj" /><br />
+
+    @*@Html.TextBoxFor(m=>m.UposlenikId, new { @placeholder = "Unesite ID poslovodje" })*@
+    <input type="submit" value="Sacuvaj" />
+}
+
+

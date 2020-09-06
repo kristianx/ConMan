@@ -1,0 +1,42 @@
+﻿@model ConManApp.EnModels.Skladistar
+@{
+    ViewData["Title"] = "ViewMyProfile";
+}
+
+<h2>Moj profil:</h2>
+<style>
+    .ispisskladistara {
+        background-color: ghostwhite;
+    }
+
+    .naslovi {
+        background-color: forestgreen;
+    }
+
+    #podaci {
+        background-color: whitesmoke;
+    }
+</style>
+@if (Model != null)
+{
+    
+    
+        <div class="ispisskladistara">
+            <p class="naslovi">Ime:</p>
+            <p id="podaci">@Model.Ime</p><br />
+            <p class="naslovi">Prezime:</p>
+            <p id="podaci">@Model.Prezime</p><br />
+            <p class="naslovi">Username:</p>
+            <p id="podaci">@Model.username</p><br />
+            <p class="naslovi">Password:</p>
+            <p id="podaci">@Model.password</p><br />
+            <p class="naslovi">Kontakt broj:</p>
+            <p id="podaci">@Model.KontaktBroj</p><br />
+            <p class="naslovi">Skladiste</p>
+            <p  id="podaci">@ViewBag.AdresaSkladista</p>
+        </div>
+  }
+   
+
+
+

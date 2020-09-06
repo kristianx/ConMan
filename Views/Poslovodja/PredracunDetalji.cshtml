@@ -1,0 +1,41 @@
+﻿@model ConManApp.Models.PredracunDetaljiVM
+@{
+    ViewData["Title"] = "PredracunDetalji";
+}
+<a href="/Poslovodja/DetaljiProjekta?id=@Model.ProjektID" class="fa fa-arrow-left" aria-hidden="true"></a><br />
+
+<label>Materijali na predracunu:</label>
+<table class="table table-bordered">
+    <tr>
+        <th>Naziv materijala</th>
+        <th>Tip materijala</th>
+        <th>Mjerna jedinica</th>
+        <th>Kolicina</th>
+        <th>Cijena u KM(konvertibilne marke)</th>
+        <th>Akcija</th>
+        
+
+    </tr>
+    @foreach (var x in Model.rows)
+    {
+        <tr>
+            <td>@x.MaterijalNaziv</td>
+            <td>@x.GrupaMaterijalaNaziv</td>
+            <td>@x.OznakaMjerneJedinice</td>
+            <td>@x.Kolicina</td>
+            <td>@x.MaterijalCijena</td>
+            <td><a class="btn btn-primary btn-danger" href="/Poslovodja/UkloniPredracunStavku?predracunid=@Model.PredracunID&stavkaid=@x.PredracunMaterijalId">Ukloni</a></td>
+        </tr>
+
+    }
+    <tr>
+
+        <th>Ukupna cijena predracuna: @Model.UkupnaCijenaPredracuna KM</th>
+    </tr>
+</table><br /><br />
+              <a href="/Poslovodja/DownloadFile?id=@Model.PredracunID" value="Report Excel">Open in Excel</a><br />
+<a href="/Poslovodja/PregledDostupnihMaterijala?predracunid=@Model.PredracunID" class="btn btn-primary btn-block">Pregled dostupnih materijala</a>
+<br /><br />
+
+
+

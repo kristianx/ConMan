@@ -1,0 +1,11 @@
+﻿@model ConManApp.EnModels.GrupaMaterijal
+@{
+    ViewData["Title"] = "AddGrupaMaterijala";
+}
+
+<h2>AddGrupaMaterijala</h2>
+@using (Html.BeginForm("AddGrupaMaterijala","Administracija",FormMethod.Post))
+{
+    @Html.TextBoxFor(x => x.NazivGrupe, new { @placeholder="Unesite naziv grupe"})
+    <input type="submit" value="Sacuvaj" />
+}

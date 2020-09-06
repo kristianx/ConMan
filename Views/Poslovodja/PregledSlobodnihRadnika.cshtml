@@ -1,0 +1,37 @@
+﻿@model ConManApp.Models.SlobodniRadniciVM
+@{
+    ViewData["Title"] = "PregledSlobodnihRadnika";
+}
+<a class="fa fa-arrow-left" aria-hidden="true" href="/Poslovodja/DetaljiProjekta?id=@Model.ProjektID" ></a><br /><br />
+<form action="/Poslovodja/PregledSlobodnihRadnika?projektid=@Model.ProjektID&Filter=@Model.Filter">
+    <label>Pretraga</label><br />
+    <input asp-for="ProjektID" hidden />
+    <input type="text" asp-for="Filter" placeholder="Unesite ime radnika" /><br />
+    <input class="btn btn-primary" type="submit" value="Filtriraj" />
+</form>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Username</th>
+        <th>Kontakt broj</th>
+        <th>Akcija</th>
+
+    </tr>
+
+    @foreach (var x in Model.rows)
+    {
+        <tr>
+            <td>@x.Ime</td>
+            <td>@x.Prezime</td>
+            <td>@x.Username</td>
+            <td>@x.KontaktBroj</td>
+            <td><a href="/Poslovodja/AddRadnikProjekt?projektid=@Model.ProjektID&radnikid=@x.UposlenikId">Dodaj</a></td>
+        </tr>
+
+    }
+</table>
+
+
+

@@ -1,0 +1,21 @@
+﻿@model ConManApp.EnModels.Vlasnik
+@{
+    ViewData["Title"] = "AddPodaci";
+}
+
+<h2>Register as Vlasnik:</h2>
+
+@using ((Html.BeginForm("AddPodaci", "Vlasnik", FormMethod.Post)))
+{
+    @Html.TextBoxFor(m => m.Ime, new { @placeholder = "Ime" })
+   
+    @Html.TextBoxFor(m => m.Prezime, new { @placeholder = "Prezime" })<br />
+    @Html.TextBoxFor(m => m.username, new { @placeholder = "Username" })<br />
+    @Html.TextBoxFor(m => m.password, new { @placeholder = "password" })<br />
+    <input type="submit" value="Sacuvaj">
+
+
+}
+
+<a href="/Vlasnik/AddDrzava">Dalje</a>
+

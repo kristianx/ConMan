@@ -1,0 +1,14 @@
+﻿@model ConManApp.EnModels.Poslovodja
+@{
+    ViewData["Title"] = "GetPoslovodja";
+}
+
+
+<h2>Unesite ID poslovodje:</h2>
+@using (Html.BeginForm("ViewPoslovodja", "Administracija", FormMethod.Get))
+{
+    @Html.TextBoxFor(m => m.UposlenikId, new { @placeholder = "ID uposlenika:" })
+    <input type="submit" value="Trazi" />
+}
+
+

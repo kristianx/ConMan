@@ -1,0 +1,114 @@
+﻿
+/*Global*/
+* {
+    transition: all .3s ease-in-out;
+}
+
+/*Side bar*/
+.collapse-menu {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+/*Top bar*/
+
+.back-arrow {
+    color: #3259CA;
+}
+
+
+/*DASHBOARD -- Project card*/
+
+.projekt-header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+.naziv-projekta {
+    margin: 0;
+    font-size: 18px;
+}
+.projekt-adresa {
+    margin: 0;
+    font-weight: 600;
+}
+.projekt-header span{
+    margin-top:7px;
+}
+
+
+.projekt-body {
+    padding: 90px 25px 30px;
+    position: relative;
+}
+
+
+.datum-vrijednost,
+.projekt-adresa,
+.projekt-status {
+    font-size: 16px;
+}
+
+
+
+.projekt-status {
+    color: #1CC88A;
+    margin:0;
+    font-weight:700;
+}
+
+
+
+.datumi-projekta{
+    margin-bottom:18px;
+}
+
+.datum-header {
+    font-size: 15px;
+}
+
+.datum-vrijednost {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.projekt-body:hover {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) !important;
+}
+
+.card-linker:hover{
+    text-decoration:none;
+}
+
+
+
+/*DASHBOARD -- Projekt novi projekat card*/
+
+.card-novi-projekat {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #F8F9FC;
+    text-align: center;
+}
+
+.card-novi-projekat h6{
+    font-size:20px;
+    
+}
+    .card-novi-projekat p {
+        margin-top: 20px;
+        margin: 0;
+        font-size: 45px;
+    }
+
+.card-novi-projekat:hover {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15) !important;
+    background-color:white;
+ 
+}

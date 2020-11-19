@@ -13,7 +13,7 @@ namespace ConManApp.Models
         public string Adresa { get; set; }
         public string GradNaziv { get; set; }
 
-        public List<Vozilo> Vozila { get; set; }
+        public List<VoziloSkladisteVM> Vozila { get; set; }
         public List<Materijal> Materijali { get; set; }
         public List<Oprema> Oprema { get; set; }
 

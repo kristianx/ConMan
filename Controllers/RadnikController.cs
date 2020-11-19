@@ -78,6 +78,7 @@ namespace ConManApp.Controllers
                     }).ToList()
 
                 };
+                Model.username = r.username;
                 return View(Model);
             }
             else
@@ -95,6 +96,7 @@ namespace ConManApp.Controllers
                     }).ToList()
 
                 };
+                Model.username = r.username;
                 return View(Model);
             }
 
@@ -123,6 +125,7 @@ namespace ConManApp.Controllers
 
                 }).ToList()
             };
+            Model.username = r.username;
             return View(Model);
         }
 

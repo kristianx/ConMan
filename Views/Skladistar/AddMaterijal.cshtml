@@ -1,20 +1,77 @@
 ﻿@model ConManApp.EnModels.Materijal
-@{
-    ViewData["Title"] = "AddMaterijal";
+@{ ViewData["Title"] = "AddMaterijal"; }
+@*
+    <h2>AddMaterijal</h2>
+    @using (Html.BeginForm("AddMaterijal", "Skladistar",new { username = ViewBag.username, m = @Model }))
+    {
+        @Html.DropDownListFor(m => m.GrupaMaterijalId, ViewBag.GrupeBag as SelectList, "--grupa--")<a href="/Skladistar/AddGrupaMaterijala">...</a><br />
+        @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Naziv materijala:" })<br />
+        @Html.TextBoxFor(m => m.Cijena, new { @placeholder = "Cijena:" })<br />
+        //@Html.DropDownListFor(m => m.SkladisteId, ViewBag.SkladisteBag as SelectList, "--skladiste--")
+<br />
+@Html.DropDownListFor(m => m.DobavljacId, ViewBag.DobavljaciBag as SelectList, "--dobavljac--")
+<br />
+@Html.TextBoxFor(m => m.Kolicina, new { @placeholder = "kolicina" })
+<br />
+<input type="submit" value="Sacuvaj" />
+<br />
+
+<a href="/Skladistar/Index">Back to menu</a>
+
 }
+*@
+<div class="col-md-4 offset-md-4 col-sm-12 form-wrapper">
+    <h2>Dodaj Materijal</h2>
 
-<h2>AddMaterijal</h2>
-@using (Html.BeginForm("AddMaterijal", "Skladistar",new { username = ViewBag.username, m = @Model }))
-{
-    @Html.DropDownListFor(m => m.GrupaMaterijalId, ViewBag.GrupeBag as SelectList, "--grupa--")<a href="/Skladistar/AddGrupaMaterijala">...</a><br />
-    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Naziv materijala:" })<br />
-    @Html.TextBoxFor(m => m.Cijena, new { @placeholder = "Cijena:" })<br />
-    @*@Html.DropDownListFor(m => m.SkladisteId, ViewBag.SkladisteBag as SelectList, "--skladiste--")<br />*@
-    @Html.DropDownListFor(m => m.DobavljacId, ViewBag.DobavljaciBag as SelectList, "--dobavljac--")<br />
-    @Html.TextBoxFor(m => m.Kolicina, new { @placeholder="kolicina"})<br />
-    <input type="submit" value="Sacuvaj" /><br />
+    @using (Html.BeginForm("AddMaterijal", "Skladistar", new { username = ViewBag.username, m = @Model }))
+    {
+<div class="form-group">
+    <label>Grupa materijala</label><br />
+    @Html.DropDownListFor(m => m.GrupaMaterijalId, ViewBag.GrupeBag as SelectList, "--grupa--", new { @class = "form-control" })
+    <a href="/Skladistar/AddGrupaMaterijala" class="form-control">+Nova grupa</a>
+    <br />
+</div>
 
-    <a href="/Skladistar/Index?username=@ViewBag.username">Back to menu</a>
+<div class="form-group">
+<label>Naziv Materijala</label><br />
+@Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Naziv materijala:", @class = "form-control" })
+<br />
+</div>
+<div class="form-group">
+<label>Cijena</label><br />
+@Html.TextBoxFor(m => m.Cijena, new { @placeholder = "Cijena:", @class = "form-control" })
+<br />
+</div>
+<div class="form-group">
+<label>Dobavljac</label><br />
+@Html.DropDownListFor(m => m.DobavljacId, ViewBag.DobavljaciBag as SelectList, "--dobavljac--", new { @class = "form-control" })
+<br />
+</div>
+<div class="form-group">
+<label>Kolicina</label><br />
+@Html.TextBoxFor(m => m.Kolicina, new { @placeholder = "kolicina", @class = "form-control" })
+<br />
+</div>
 
-}
 
+<div class="form-row">
+<input type="submit" value="Sacuvaj" class="btn btn-success" /><br />
+<a href="/Skladistar/Index" class="btn">Otkazi</a>
+</div>}
+</div>
+
+<style>
+    .form-wrapper {
+        margin-top: 50px;
+    }
+
+        .form-wrapper h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-wrapper div {
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+</style>

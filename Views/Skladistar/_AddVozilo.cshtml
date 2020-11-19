@@ -1,0 +1,24 @@
+﻿@model ConManApp.EnModels.Vozilo
+@{ ViewData["Title"] = "AddVozilo"; }
+
+<h2>AddVozilo</h2>
+
+@using (Html.BeginForm("AddVozilo", "Skladistar", new { username = ViewBag.Username}))
+{
+
+    @Html.TextBoxFor(m => m.NazivProizvodjaca, new { @placeholder = "Unesite naziv proizvodjaca:" })
+    <br />
+    @Html.TextBoxFor(m => m.Model, new { @placeholder = "Unesite model :" })
+    <br />
+    @Html.TextBoxFor(m => m.GodinaProizvodnje, new { @placeholder = "Unesite godinu proizvodnje:" }) @*@Html.DropDownListFor(m => m.SkladisteId, ViewBag.Skla as SelectList, "--Skladiste--")<br />*@
+    @Html.DropDownListFor(m => m.TipVozilaId, ViewBag.TipVozila as SelectList, "--Tip vozila--") <a href="/Skladistar/AddTipVozilo">...</a>
+    <br />
+    <label>Slika</label>
+    <br />
+    <input type="file" asp-for="SlikaVozila" />
+    <br />
+
+    <input type="submit" value="Sacuvaj" />
+    <br /> @*<a href="/Skladistar/Index?username=@ViewBag.Username">Back to menu</a>*@
+}
+

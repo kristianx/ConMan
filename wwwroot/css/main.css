@@ -112,3 +112,18 @@
     background-color:white;
  
 }
+
+
+.login-button {
+    background-color: #4E73DF;
+    color: white;
+    text-transform:uppercase;
+    font-weight:700;
+    padding:12px 20px;
+    border-radius:50px;
+    font-size:15px;
+}
+.login-button:hover {
+    background-color: #274FC2;
+    color: white;
+}

@@ -36,6 +36,18 @@
           "WebActivatorEx": "(, )"
         }
       },
+      "GoogleAuthenticator/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "QRCoder": "1.3.5"
+        },
+        "compile": {
+          "lib/netstandard2.0/Google.Authenticator.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Google.Authenticator.dll": {}
+        }
+      },
       "Grid.Mvc/3.0.0": {
         "type": "package",
         "compile": {
@@ -1173,6 +1185,18 @@
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
+      "Microsoft.EntityFrameworkCore.Tools/3.1.7": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "3.1.7"
+        },
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/3.1.7": {
         "type": "package",
         "dependencies": {
@@ -1894,6 +1918,18 @@
           "lib/net40/PagedList.Mvc.dll": {}
         }
       },
+      "QRCoder/1.3.5": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0-preview1-25914-04"
+        },
+        "compile": {
+          "lib/netstandard2.0/QRCoder.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/QRCoder.dll": {}
+        }
+      },
       "ReflectionIT.Mvc.Paging/4.0.0": {
         "type": "package",
         "dependencies": {
@@ -2242,7 +2278,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {}
+          "ref/netstandard1.3/System.Collections.Specialized.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Specialized.dll": {}
@@ -3857,6 +3893,48 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
+      "Twilio/5.37.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.3.0",
+          "Newtonsoft.Json": "11.0.2",
+          "System.Collections.Specialized": "4.3.0",
+          "System.IdentityModel.Tokens.Jwt": "5.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Twilio.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Twilio.dll": {}
+        }
+      },
+      "Twilio.AspNet.Common/5.37.2": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.0/Twilio.AspNet.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/Twilio.AspNet.Common.dll": {}
+        }
+      },
+      "Twilio.AspNet.Core/5.37.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Core": "1.0.4",
+          "NETStandard.Library": "1.6.1",
+          "Twilio": "5.37.2",
+          "Twilio.AspNet.Common": "5.37.2"
+        },
+        "compile": {
+          "lib/netstandard1.6/Twilio.AspNet.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Twilio.AspNet.Core.dll": {}
+        }
+      },
       "WebActivatorEx/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -3983,6 +4061,21 @@
         "Content/App_Start/FontAwesomeBundleConfig.cs.pp",
         "fontawesome.mvc.1.0.0.nupkg.sha512",
         "fontawesome.mvc.nuspec"
+      ]
+    },
+    "GoogleAuthenticator/2.0.1": {
+      "sha512": "PiYSfi8Aj5fxhpnryU0TY09Cy6o6/Ajz4K9Y5huiMUu8GiqpauQD0l6J/KMgNr6BLjpT4RwRmm0YVA4fWApWRA==",
+      "type": "package",
+      "path": "googleauthenticator/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "googleauthenticator.2.0.1.nupkg.sha512",
+        "googleauthenticator.nuspec",
+        "lib/net45/Google.Authenticator.dll",
+        "lib/net45/Google.Authenticator.pdb",
+        "lib/netstandard2.0/Google.Authenticator.dll",
+        "lib/netstandard2.0/Google.Authenticator.pdb"
       ]
     },
     "Grid.Mvc/3.0.0": {
@@ -5211,6 +5304,30 @@
         "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.3.1.7.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
+      ]
+    },
+    "Microsoft.EntityFrameworkCore.Tools/3.1.7": {
+      "sha512": "Cc1OQP/mVUAmH3JGeFuhAdtJ7J33Q4U/MvLAh7Of7e+5XUdHb7tJxobjVyr6nxJDZlJvZ38af9xPGzwwSswASw==",
+      "type": "package",
+      "path": "microsoft.entityframeworkcore.tools/3.1.7",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "lib/netstandard2.0/_._",
+        "microsoft.entityframeworkcore.tools.3.1.7.nupkg.sha512",
+        "microsoft.entityframeworkcore.tools.nuspec",
+        "tools/EntityFrameworkCore.PS2.psd1",
+        "tools/EntityFrameworkCore.PS2.psm1",
+        "tools/EntityFrameworkCore.psd1",
+        "tools/EntityFrameworkCore.psm1",
+        "tools/about_EntityFrameworkCore.help.txt",
+        "tools/init.ps1",
+        "tools/net461/any/ef.exe",
+        "tools/net461/win-x86/ef.exe",
+        "tools/netcoreapp2.0/any/ef.dll",
+        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.Caching.Abstractions/3.1.7": {
@@ -6442,6 +6559,29 @@
         "lib/net40/PagedList.Mvc.dll",
         "pagedlist.mvc.4.5.0.nupkg.sha512",
         "pagedlist.mvc.nuspec"
+      ]
+    },
+    "QRCoder/1.3.5": {
+      "sha512": "2j0tYyUp3Y7evIurAxSeRNAm9NwZHdgoHW/GcRSa5yBlxYSsiFTwdtSraJPKmtKHr+/OW6jLyqw5ZgIABFPm2g==",
+      "type": "package",
+      "path": "qrcoder/1.3.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid/QRCoder.dll",
+        "lib/monotouch/QRCoder.dll",
+        "lib/net35/QRCoder.dll",
+        "lib/net40/QRCoder.dll",
+        "lib/netcore/QRCoder.dll",
+        "lib/netstandard1.6/QRCoder.dll",
+        "lib/netstandard2.0/QRCoder.dll",
+        "lib/portable-net45+win8+wpa81/QRCoder.dll",
+        "lib/portable-net45+wpa81+wp81+wp8+uap/QRCoder.dll",
+        "lib/uap/QRCoder.dll",
+        "lib/uap10.0/QRCoder.dll",
+        "lib/xamarinios/QRCoder.dll",
+        "qrcoder.1.3.5.nupkg.sha512",
+        "qrcoder.nuspec"
       ]
     },
     "ReflectionIT.Mvc.Paging/4.0.0": {
@@ -11436,6 +11576,50 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
+    "Twilio/5.37.2": {
+      "sha512": "vKQ8DIyx/+lO6+qgcj6C+PdiuE7UXQBVzqFtmrzNgsPLP+YbsRHgbqz21meG737sm3QCF1RT73ayQQKNGALGtw==",
+      "type": "package",
+      "path": "twilio/5.37.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Twilio.dll",
+        "lib/net35/Twilio.xml",
+        "lib/net451/Twilio.dll",
+        "lib/net451/Twilio.xml",
+        "lib/netstandard1.4/Twilio.dll",
+        "lib/netstandard1.4/Twilio.xml",
+        "lib/netstandard2.0/Twilio.dll",
+        "lib/netstandard2.0/Twilio.xml",
+        "twilio.5.37.2.nupkg.sha512",
+        "twilio.nuspec"
+      ]
+    },
+    "Twilio.AspNet.Common/5.37.2": {
+      "sha512": "mtcDcP+pKO6bBm9SAWXj7DqUgLkV706CGtbQ2h7HzM1Aw/hTM1f14z03CqDEfM+afXELC9SeK0/6qYYQw9TMCQ==",
+      "type": "package",
+      "path": "twilio.aspnet.common/5.37.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Twilio.AspNet.Common.dll",
+        "lib/netstandard1.0/Twilio.AspNet.Common.dll",
+        "twilio.aspnet.common.5.37.2.nupkg.sha512",
+        "twilio.aspnet.common.nuspec"
+      ]
+    },
+    "Twilio.AspNet.Core/5.37.2": {
+      "sha512": "kEmsczResMWJ1lHnhZRKhWVE2eiBuXWAUF6tsQDAeXWIOREmBpUxNIU5LI47ss8miSj7oIPxpM8yz5GYjZP9QQ==",
+      "type": "package",
+      "path": "twilio.aspnet.core/5.37.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard1.6/Twilio.AspNet.Core.dll",
+        "twilio.aspnet.core.5.37.2.nupkg.sha512",
+        "twilio.aspnet.core.nuspec"
+      ]
+    },
     "WebActivatorEx/2.2.0": {
       "sha512": "LpTC82DGzFeqHjRGLvynZKRjjELcsED5f784N4IWEPZhPlJsVYQKVpxNUjNdcMV6YHMqRhEiqolr69UVaT4ciw==",
       "type": "package",
@@ -11516,14 +11700,17 @@
     ".NETCoreApp,Version=v3.1": [
       "EPPlus >= 5.2.1",
       "FontAwesome.MVC >= 1.0.0",
+      "GoogleAuthenticator >= 2.0.1",
       "Grid.Mvc >= 3.0.0",
       "Microsoft.AspNet.Mvc >= 5.2.7",
       "Microsoft.AspNet.WebApi >= 5.2.7",
       "Microsoft.AspNet.WebApi.Core >= 5.2.7",
       "Microsoft.AspNetCore.Authorization >= 3.1.7",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
+      "Microsoft.EntityFrameworkCore >= 3.1.7",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.7",
+      "Microsoft.EntityFrameworkCore.Tools >= 3.1.7",
       "Microsoft.Extensions.Logging >= 3.1.7",
       "Microsoft.VisualStudio.Web.BrowserLink >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.4",
@@ -11532,6 +11719,7 @@
       "PagedList.Mvc >= 4.5.0",
       "ReflectionIT.Mvc.Paging >= 4.0.0",
       "Syncfusion.XlsIO.AspNet.Mvc5 >= 18.2.0.54",
+      "Twilio.AspNet.Core >= 5.37.2",
       "WebActivatorEx >= 2.2.0",
       "X.PagedList >= 8.0.7",
       "X.PagedList.Mvc >= 8.0.7",
@@ -11545,11 +11733,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\krist\\Desktop\\ConManApp\\ConManApp.csproj",
+      "projectUniqueName": "C:\\Users\\krist\\Desktop\\Keebree\\ConManApp.csproj",
       "projectName": "ConManApp",
-      "projectPath": "C:\\Users\\krist\\Desktop\\ConManApp\\ConManApp.csproj",
+      "projectPath": "C:\\Users\\krist\\Desktop\\Keebree\\ConManApp.csproj",
       "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\krist\\Desktop\\ConManApp\\obj\\",
+      "outputPath": "C:\\Users\\krist\\Desktop\\Keebree\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11587,6 +11775,10 @@
             "target": "Package",
             "version": "[1.0.0, )"
           },
+          "GoogleAuthenticator": {
+            "target": "Package",
+            "version": "[2.0.1, )"
+          },
           "Grid.Mvc": {
             "target": "Package",
             "version": "[3.0.0, )"
@@ -11611,6 +11803,10 @@
             "target": "Package",
             "version": "[2.2.5, )"
           },
+          "Microsoft.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[3.1.7, )"
+          },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
@@ -11618,6 +11814,12 @@
             "version": "[3.1.7, )"
           },
           "Microsoft.EntityFrameworkCore.SqlServer": {
+            "target": "Package",
+            "version": "[3.1.7, )"
+          },
+          "Microsoft.EntityFrameworkCore.Tools": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
             "target": "Package",
             "version": "[3.1.7, )"
           },
@@ -11652,6 +11854,10 @@
           "Syncfusion.XlsIO.AspNet.Mvc5": {
             "target": "Package",
             "version": "[18.2.0.54, )"
+          },
+          "Twilio.AspNet.Core": {
+            "target": "Package",
+            "version": "[5.37.2, )"
           },
           "WebActivatorEx": {
             "target": "Package",

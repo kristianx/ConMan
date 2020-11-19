@@ -2,22 +2,58 @@
 @{
     ViewData["Title"] = "AddVozilo";
 }
+<div class="col-md-4 offset-md-4 col-sm-12 form-wrapper">
+    <h2>Dodaj novo vozilo</h2>
 
-<h2>AddVozilo</h2>
+    @using (Html.BeginForm("AddVozilo", "Skladistar", FormMethod.Post,  new { enctype = "multipart/form-data", username = ViewBag.Username }))
+    {
+        @Html.AntiForgeryToken()
+<div class="form-group">
+    <label>Naziv proizvodjaca</label><br />
+    @Html.TextBoxFor(m => m.NazivProizvodjaca, new { @placeholder = "Unesite naziv proizvodjaca", @class = "form-control" })
+    <br />
+</div>
+<div class="form-group ">
+    <label>Model vozila</label><br />
+    @Html.TextBoxFor(m => m.Model, new { @placeholder = "Unesite model :", @class = "form-control" })
+    <br />
+</div>
+<div class="form-group">
+    <label>Godina proizvodnje</label><br />
+    @Html.TextBoxFor(m => m.GodinaProizvodnje, new { @placeholder = "Unesite godinu proizvodnje:", @class = "form-control" })
+    <br />
+</div>
+<div class="form-group">
+    <label>Tip vozila</label><br />
+    @Html.DropDownListFor(m => m.TipVozilaId, ViewBag.TipVozila as SelectList, "--Tip vozila--", new { @class = "form-control" })
+    <a href="/Skladistar/AddTipVozilo" class="form-control">+Novi tip</a>
+    <br />
+</div>
+        <div class="form-group">
+            <label>Slikaa</label><br />
+           
+            <input type="file" name="slika" id="slika" class="form-control" style="height: calc(1.5em + 0.75rem + 7px);"/>
+            <br />
+        </div>
+        <div class="form-row">
+            <input type="submit" value="Sacuvaj" class="btn btn-success"/><br />
+            <a href="/Skladistar/Index" class="btn">Otkazi</a>
+        </div>
+       }
+</div>
 
-@using (Html.BeginForm("AddVozilo", "Skladistar",new {username=ViewBag.Username,v=@Model }))
-{
-
-    @Html.TextBoxFor(m => m.NazivProizvodjaca, new { @placeholder = "Unesite naziv proizvodjaca:" })<br />
-    @Html.TextBoxFor(m => m.Model, new { @placeholder = "Unesite model :" })<br />
-    @Html.TextBoxFor(m => m.GodinaProizvodnje, new { @placeholder = "Unesite godinu proizvodnje:" })
-    @*@Html.DropDownListFor(m => m.SkladisteId, ViewBag.Skla as SelectList, "--Skladiste--")<br />*@
-    @Html.DropDownListFor(m => m.TipVozilaId, ViewBag.Tip as SelectList, "--Tip vozila--") <a href="/Skladistar/AddTipVozilo">...</a><br />
-    <label>Slika</label><br />
-    <input type="file" asp-for="SlikaVozila" /><br />
-
-    <input type="submit" value="Sacuvaj" /><br />
-    @*<a href="/Skladistar/Index?username=@ViewBag.Username">Back to menu</a>*@
-
-}
-
+<style>
+    .form-wrapper{
+        margin-top:50px;
+        
+    }
+        .form-wrapper h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    .form-wrapper div{
+        margin-bottom: 10px;
+        line-height: 1;
+    }
+  
+</style>

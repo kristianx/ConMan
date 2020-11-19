@@ -1,9 +1,7 @@
 ﻿@model ConManApp.Models.SkladisteViewModel
-
 @*@model ConManApp.Models.LoginViewModel*@
 @{ ViewData["korisnickoime"] = "ime";
-    ViewData["korisnickiusername"] = "username"; 
-    }
+    ViewData["korisnickiusername"] = "username"; }
 
 
 
@@ -192,9 +190,116 @@
     </nav>
     <!-- End of Topbar -->
     <div class="container-fluid">
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <h1 class="h3 mb-0 text-gray-800">Skladišta</h1>
+        <div class="d-sm-flex flex-column align-items-left mb-4 ">
+            <h1 class="h3 mb-0 text-gray-800">@Model.Naziv</h1>
+            <p class="header-adresa">@Model.Adresa, @Model.GradNaziv</p>
         </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Vozila</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Slika vozila</th>
+                                <th>Proizvodjac</th>
+                                <th>Model</th>
+                                <th>Godina</th>
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var v in Model.Vozila)
+                            {
+                            <tr>
+                                <td class="slika-td">
+                                    @if (!string.IsNullOrEmpty(v.SlikaVozila))
+                                    {
+                                        <img src="@v.SlikaVozila" class="slikavozila" alt="Slika vozila @v.VoziloId" />
+                                    }
+                                    else
+                                    {
+                                        <img src="~/images/no-car.jpg" class="slikavozila" alt="Slika vozila @v.VoziloId" />
+                                    }
+
+                                </td>
+                                <td>@v.NazivProizvodjaca</td>
+                                <td>@v.Model</td>
+                                <td>@v.GodinaProizvodnje</td>
+                            </tr>}
+
+                        </tbody>
+
+                    </table>
+                    <a href="/Skladistar/VoziloDodaj" class="btn btn-primary">Dodaj vozilo</a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Materijali</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Naziv materijala</th>
+                                <th>Cijena</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var v in Model.Materijali)
+                            {
+                <tr>
+                    <td>@v.Naziv</td>
+                    <td>@v.Cijena</td>
+                </tr>
+}
+                        </tbody>
+
+                    </table>
+                    <a href="/Skladistar/AddMaterijal" class="btn btn-primary">Dodaj Materijal</a>
+                </div>
+            </div>
+        </div>
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Oprema</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Naziv opreme</th>
+                                <th>Upotrebljivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var v in Model.Oprema)
+                            {
+                <tr>
+                    <td>@v.Naziv</td>
+                    @if (v.usable == true)
+                    {
+
+    <td>Da</td> }
+                    else
+                    {
+    <td>Ne</td>}
+                </tr>}
+                        </tbody>
+
+                    </table>
+                    <a href="/Skladistar/AddOprema" class="btn btn-primary">Dodaj Oprema</a>
+                </div>
+            </div>
+        </div>
+        <!--
         <div class="row">
             <ul>
                 @*<li><a id="navibarlinks">@Html.ActionLink("Skladiste", "GetSkladiste", "Skladistar")</a></li>*@
@@ -206,9 +311,13 @@
 
 
         </div>
-
+        -->
         <br />
     </div>
+
+
+
+
 </body>
 
 <style>
@@ -226,6 +335,7 @@
 
 
 <style>
+
     .navibar {
         background-color: lightblue;
         height: 30%;
@@ -246,6 +356,22 @@
 
     #logoutlink {
         color: darkcyan;
+    }
+
+
+    .header-adresa {
+        margin-left: 3px;
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .slikavozila{
+        max-width:300px;
+        height: auto;
+    }
+
+    .slika-td {
+        width: 500px;
+        text-align: center;
     }
 </style>
 <script src="~/lib/jquery/dist/jquery.js"></script>

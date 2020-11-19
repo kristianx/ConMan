@@ -14,5 +14,7 @@ namespace ConManApp.Models
         public string adresaskladista { get; set; }
         public string NazivGrada { get; set; }
         public string tipvozila { get; set; }
+
+        public string slika { get; set; }
     }
 }

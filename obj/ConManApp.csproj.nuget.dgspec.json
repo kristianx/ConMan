@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\krist\\Desktop\\ConManApp\\ConManApp.csproj": {}
+    "C:\\Users\\krist\\Desktop\\Keebree\\ConManApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\krist\\Desktop\\ConManApp\\ConManApp.csproj": {
+    "C:\\Users\\krist\\Desktop\\Keebree\\ConManApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\krist\\Desktop\\ConManApp\\ConManApp.csproj",
+        "projectUniqueName": "C:\\Users\\krist\\Desktop\\Keebree\\ConManApp.csproj",
         "projectName": "ConManApp",
-        "projectPath": "C:\\Users\\krist\\Desktop\\ConManApp\\ConManApp.csproj",
+        "projectPath": "C:\\Users\\krist\\Desktop\\Keebree\\ConManApp.csproj",
         "packagesPath": "C:\\Users\\krist\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\krist\\Desktop\\ConManApp\\obj\\",
+        "outputPath": "C:\\Users\\krist\\Desktop\\Keebree\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -49,6 +49,10 @@
               "target": "Package",
               "version": "[1.0.0, )"
             },
+            "GoogleAuthenticator": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
             "Grid.Mvc": {
               "target": "Package",
               "version": "[3.0.0, )"
@@ -73,6 +77,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -80,6 +88,12 @@
               "version": "[3.1.7, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[3.1.7, )"
             },
@@ -114,6 +128,10 @@
             "Syncfusion.XlsIO.AspNet.Mvc5": {
               "target": "Package",
               "version": "[18.2.0.54, )"
+            },
+            "Twilio.AspNet.Core": {
+              "target": "Package",
+              "version": "[5.37.2, )"
             },
             "WebActivatorEx": {
               "target": "Package",

@@ -1,16 +1,60 @@
 ﻿@model ConManApp.EnModels.Oprema
-@{
-    ViewData["Title"] = "AddOprema";
-}
+@{ ViewData["Title"] = "AddOprema"; }
+@*
+    <h2>AddOprema</h2>
 
-<h2>AddOprema</h2>
-
-@using (Html.BeginForm("AddOprema", "Skladistar", new { username = ViewBag.username, o =@Model }))
-{
+    @using (Html.BeginForm("AddOprema", "Skladistar", new { username = ViewBag.username, o = @Model }))
+    {
     <p>Unesite naziv opreme:</p>
-    @Html.TextBoxFor(m => m.Naziv, new { @placeholder="Proizvodjac nazivopreme model:"})<br />
-    <p>Upotrebljivo:</p>
-    @Html.CheckBoxFor(m=>m.usable)<br />
-    <input type="submit" class="btn btn-primary btn-success" value="Sacuvaj" />
-}
-<a href="/Skladistar/Index?username=@ViewBag.username">Back to menu</a>
+                    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Proizvodjac nazivopreme model:" })
+                    <br />
+                                    <p>Upotrebljivo:</p>
+                                                    @Html.CheckBoxFor(m => m.usable)
+                                                    <br />
+                                                                    <input type="submit" class="btn btn-primary btn-success" value="Sacuvaj" />}
+    <a href="/Skladistar/Index?username=@ViewBag.username">Back to menu</a>
+*@
+
+<div class="col-md-4 offset-md-4 col-sm-12 form-wrapper">
+    <h2>Dodaj opremu</h2>
+
+    @using (Html.BeginForm("AddOprema", "Skladistar", new { username = ViewBag.username, o = @Model }))
+    {
+
+<div class="form-group">
+    <label>Naziv opreme</label><br />
+    @Html.TextBoxFor(m => m.Naziv, new { @placeholder = "Naziv opreme:", @class = "form-control" })
+    <br />
+</div>
+<div class="form-group">
+    <label>Da li je oprema upotrebljiva</label><br />
+    <div class="form-check">
+        @Html.CheckBoxFor(m => m.usable, new { @class = "form-check-input" }) <label class="form-check-label">Da</label>
+        <br />
+    </div>
+    <div class="form-row">
+        <input type="submit" value="Dodaj" class="btn btn-success" /><br />
+        <a href="/Skladistar/Index" class="btn">Otkazi</a>
+    </div>
+</div>
+                    }
+               
+                            </div>
+<style>
+    .form-wrapper {
+        margin-top: 50px;
+    }
+
+        .form-wrapper h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-wrapper div {
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .form-wrapper .form-check-input {
+            margin-top: 1px;
+        }
+</style>

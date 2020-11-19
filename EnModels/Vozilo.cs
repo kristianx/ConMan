@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -20,6 +21,7 @@ namespace ConManApp.EnModels
         public int TipVozilaId { get; set; }
         public TipVozila TipVozila { get; set; }
         public byte[] SlikaVozila { get; set; }
+
 
 
     }

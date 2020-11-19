@@ -26,6 +26,26 @@
     <environment include="Development">
         <script src="~/lib/fontawesome-free-5.10.1-web/js/all.js"></script>
     </environment>
+
+
+
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <link rel="stylesheet" href="~/css/gijgo.css">
+    <link rel="stylesheet" href="~/css/nice-select.css">
+    <link rel="stylesheet" href="~/css/flaticon.css">
+    <link rel="stylesheet" href="~/css/slicknav.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+
+
 </head>
 
 <body id="page-top">
@@ -68,11 +88,17 @@
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Home/Index">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
-                </div>
-                <div class="sidebar-brand-text mx-3">ConManager <sup></sup></div>
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <!--<div class="sidebar-brand-icon">
+            <i class="fas fa-laugh-wink"></i>
+
+        </div>
+            <img src="~/images/logo.svg" width="35px" height="35px"></img>
+            <div class="sidebar-brand-text mx-3">ConManager <sup></sup></div>
+
+            -->
+                <img src="~/images/Logo-full.svg" alt="Logo" height="35" />
+
             </a>
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
@@ -111,93 +137,107 @@
             </div>*@
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/Home/Index">
+                <a class="nav-link" href="/">
                     <i class="fa fa-home"></i>
                     <span>Home</span>
                 </a>
 
             </li>
+            <span class="sidebar-vlasnik">
+                <hr class="sidebar-divider">
 
-            <hr class="sidebar-divider">
+                <div class="sidebar-heading">
+                    Vlasnik
+                </div>
 
-            <div class="sidebar-heading">
-                Vlasnik
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-university"></i>
+                        <span>Poslovnice</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-toolbox"></i>
+                        <span>Administracija</span>
+                    </a>
+                </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-university"></i>
-                    <span>Poslovnice</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-toolbox"></i>
-                    <span>Administracija</span>
-                </a>
-            </li>
+            </span>
+            <span class="sidebar-poslovodja">
+                <hr class="sidebar-divider">
 
+                <div class="sidebar-heading">
+                    Poslovodja
+                </div>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="/Poslovodja/Index1">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Poslovodja/posaljiporuku">
+                        <i class="fas fa-fw fa-envelope"></i>
+                        <span>Poruke</span>
+                    </a>
+                </li>
 
-            <hr class="sidebar-divider">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Poslovodja/mojiprojekti">
+                        <i class="fas fa-fw fa-archive"></i>
+                        <span>Moji projekti</span>
+                    </a>
+                </li>
+            </span>
+            <span class="sidebar-skladistar">
+                <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
-                Poslovodja
-            </div>
+                <div class="sidebar-heading">
+                    Skladistar
+                </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/Poslovodja/Index1">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Poslovodja/posaljiporuku">
-                    <i class="fas fa-fw fa-envelope"></i>
-                    <span>Poruke</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-car"></i>
+                        <span>Vozila</span>
+                    </a>
+                </li>
+            </span>
+            <span class="sidebar-radnik">
 
-            <li class="nav-item">
-                <a class="nav-link" href="/Poslovodja/mojiprojekti">
-                    <i class="fas fa-fw fa-archive"></i>
-                    <span>Moji projekti</span>
-                </a>
-            </li>
-            <hr class="sidebar-divider">
+                <hr class="sidebar-divider">
 
-            <div class="sidebar-heading">
-                Skladistar
-            </div>
+                <div class="sidebar-heading">
+                    Radnik
+                </div>
 
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-car"></i>
-                    <span>Vozila</span>
-                </a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                </span>
 
-
-            <hr class="sidebar-divider my-0">
-
-
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <!-- Sidebar Toggler (Sidebar) -->
-            <li class="text-center d-none d-md-inline collapse-menu">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </li>
+                <!-- Nav Item - Utilities Collapse Menu -->
+                <!-- Sidebar Toggler (Sidebar) -->
+                <li class="text-center d-none d-md-inline collapse-menu">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </li>
 
 
         </ul>

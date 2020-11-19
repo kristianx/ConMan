@@ -7,6 +7,7 @@ namespace ConManApp.Models
 {
     public class RaspolozivaVozilaVM
     {
+        public string username { get; set; }
         public List<Rows> rows { get; set; }
         public class Rows
         {

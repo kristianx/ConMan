@@ -7,12 +7,13 @@ using ConManApp.DB;
 using ConManApp.EnModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.AspNetCore.Http;
 
 namespace ConManApp.Controllers
 {
     public class VoziloController : Controller
     {
-        public ActionResult AddVozilo(Vozilo v)
+        public ActionResult AddVozilo(Vozilo v, IFormFile file)
         {
             MojDBCOntext db = new MojDBCOntext();
             

@@ -7,6 +7,8 @@ using ConManApp.EnModels;
 using ConManApp.DB;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using ConManApp.Models;
+using ConManApp.Helper;
+
 namespace ConManApp.Controllers
 {
     public class AdministracijaController : Controller
@@ -92,8 +94,19 @@ namespace ConManApp.Controllers
 
             //valjda parc view za vozila i materijale
             List<Materijal> materijali = db.Materijal.Where(x => x.SkladisteId == ss.SkladisteId).ToList();
-            List<Vozilo> vozila = db.Vozilo.Where(x => x.SkladisteId == ss.SkladisteId).ToList();
+            //List<Vozilo> vozila = db.Vozilo.Where(x => x.SkladisteId == ss.SkladisteId).ToList();
+            List<VoziloSkladisteVM> vozila = db.Vozilo.Where(x => x.SkladisteId == ss.SkladisteId && x.NazivProizvodjaca != null).Select(w => new VoziloSkladisteVM
+            {
+                SkladisteId = ss.SkladisteId,
+                GodinaProizvodnje = w.GodinaProizvodnje,
+                JeIznajmljeno = w.JeIznajmljeno,
+                Model = w.Model,
+                NazivProizvodjaca = w.NazivProizvodjaca,
+                TipVozilaId = w.TipVozilaId,
+                VoziloId = w.VoziloId,
+                SlikaVozila = ImageHelper.GetImageBase64(w.SlikaVozila)
 
+            }).ToList();
             SkladisteViewModel vm = new SkladisteViewModel();
             vm.Adresa = ss.Adresa;
             vm.Naziv = ss.Naziv;

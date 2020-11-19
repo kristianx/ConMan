@@ -1,11 +1,42 @@
 ﻿@model ConManApp.EnModels.GrupaMaterijal
-@{
-    ViewData["Title"] = "AddGrupaMaterijala";
-}
-
+@{ ViewData["Title"] = "AddGrupaMaterijala"; }
+@*
 <h2>AddGrupaMaterijala</h2>
-@using (Html.BeginForm("AddGrupaMaterijala","Administracija",FormMethod.Post))
+@using (Html.BeginForm("AddGrupaMaterijala", "Administracija", FormMethod.Post))
 {
-    @Html.TextBoxFor(x => x.NazivGrupe, new { @placeholder="Unesite naziv grupe"})
-    <input type="submit" value="Sacuvaj" />
-}
+@Html.TextBoxFor(x => x.NazivGrupe, new { @placeholder = "Unesite naziv grupe" })
+                <input type="submit" value="Sacuvaj" />}
+
+*@
+<div class="col-md-4 offset-md-4 col-sm-12 form-wrapper">
+    <h2>Dodaj novu grupu materijala</h2>
+
+    @using (Html.BeginForm("AddGrupaMaterijala", "Administracija", FormMethod.Post))
+    {
+
+<div class="form-group">
+    <label>Naziv grupe</label><br />
+    @Html.TextBoxFor(x => x.NazivGrupe, new { @placeholder = "Unesite naziv grupe", @class = "form-control" })
+    <br />
+</div>
+                <div class="form-row">
+                    <input type="submit" value="Dodaj" class="btn btn-success" /><br />
+                    <a href="/Skladistar/Index" class="btn">Otkazi</a>
+                </div>}
+</div>
+
+<style>
+    .form-wrapper {
+        margin-top: 50px;
+    }
+
+        .form-wrapper h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-wrapper div {
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+</style>

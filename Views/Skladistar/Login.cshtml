@@ -1,5 +1,44 @@
 ﻿@model ConManApp.Models.LoginViewModel
-@{ ViewData["Title"] = "Login"; }
+@{ ViewData["Title"] = "Login";
+    Layout = ""; }
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>ConManager - Login</title>
+    <!-- Custom fonts for this template-->
+    <link href="~/BootstrapContent/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="~/BootstrapContent/css/sb-admin-2.css" rel="stylesheet" />
+
+    <environment include="Development">
+        <script src="~/lib/fontawesome-free-5.10.1-web/css/all.css"></script>
+    </environment>
+
+    <!-- ... --->
+    <!-- JS -->
+    <environment include="Development">
+        <script src="~/lib/fontawesome-free-5.10.1-web/js/all.js"></script>
+    </environment>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link href="~/css/main.css" rel="stylesheet" />
+
+    <!-- Font Awesome Icons -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Theme CSS - Includes Bootstrap -->
+    <link href="css/creative.min.css" rel="stylesheet">
+</head>
 
 <style>
 
@@ -25,7 +64,7 @@
 
         .card-signin .card-title {
             margin-bottom: 2rem;
-            font-weight: 300;
+            font-weight: 500;
             font-size: 1.5rem;
         }
 
@@ -118,6 +157,8 @@
         background-color: #3b5998;
     }
 
+
+
     /* Fallback for Edge
     -------------------------------------------------- */
 
@@ -170,12 +211,18 @@
                     console.log(result);
 
                     if (result.status == true) {
-                        alert(result.message);//poruka za uspjesan login
+                        //alert(result.message);//poruka za uspjesan login
+                        if (result.twofa == true) {
+                            window.location.href = "TwoFa?username=" + result.username;
 
-                    /**/
-                        window.location.href = "Index?username=" + $('#username').val();
-                    /*
-                        window.location.href = "Index";*/
+                        } else {
+                            window.location.href = "Index?username=" + $('#username').val();
+                        }
+
+                        /**/
+                       
+                        /*
+                            window.location.href = "Index";*/
                     }
                     else {
                         alert(result.message);
@@ -190,53 +237,20 @@
 
 
 </script>
-<!--
-<body>
-    <h2>Login</h2>
-    <form id="mojaforma">
-        <p class="naslov">Unesite korisnicko ime:</p><br />
-        <input name="username" id="username" type="text" /><br />
-        @*@Html.ValidationMessageFor(m => m.username, "Obavezan unos korisnickog imena!")*@
-        <p class="naslov">Unesite lozinku:</p><br />
-
-        <input name="password" id="password" type="text" /><br />
-        @*@Html.ValidationMessageFor(m => m.username, "Obavezan unos lozinke!")*@
-
-        <input type="button" value="Login" onclick="LoginUser()" />
-    </form>
-</body>
-    -->
 
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>ConMan</title>
-
-    <!-- Font Awesome Icons -->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
-
-    <!-- Plugin CSS -->
-    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
-
-    <!-- Theme CSS - Includes Bootstrap -->
-    <link href="css/creative.min.css" rel="stylesheet">
-</head>
 <body>
 
     <div class="container">
         <div class="row">
+            <img src="~/images/Logo-full.svg" alt="Logo" height="55" style="margin: 60px auto 0px;" />
+        </div>
+        <div class="row">
             <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
                 <div class="card card-signin my-5">
                     <div class="card-body">
-                        <h5 class="card-title text-center">Log In</h5>
+                        <h2 class="card-title text-center">Prijavite se kao Skladištar</h2>
 
                         <form class="form-signin">
                             <div class="form-label-group">
@@ -250,7 +264,7 @@
                             </div>
 
 
-                            <input class="btn btn-lg btn-primary btn-block text-uppercase" value="Log in" type="button" onclick="LoginUser()">
+                            <input class="btn btn-lg login-button btn-block text-uppercase" value="Prijava" type="button" onclick="LoginUser()">
 
 
                         </form>
@@ -259,7 +273,12 @@
             </div>
         </div>
     </div>
-
+    <script src="~/BootstrapContent/vendor/jquery/jquery.min.js"></script>
+    <script src="~/BootstrapContent/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="~/BootstrapContent/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="~/BootstrapContent/js/sb-admin-2.min.js"></script>
 </body>
 
 

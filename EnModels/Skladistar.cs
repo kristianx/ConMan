@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConManApp.EnModels
 {
-    public class Skladistar:Uposlenik
+    public class Skladistar : Uposlenik
     {
 
         [ForeignKey("Skladiste")]
         public int SkladisteId { get; set; }
         public Skladiste Skladiste { get; set; }
+        public bool TwoFaAuth {get;set;}
 
     }
 }
